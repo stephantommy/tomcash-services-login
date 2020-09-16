@@ -5,27 +5,27 @@ const User = require('../models/User');
 
 router.post('/', function(req, res) {
     console.log('Logging in...');
-    console.log('credentials: ' + req.body.domain);
+    // console.log('credentials: ' + req.body.domain);
 
-    User.find( {domain: req.body.domain} )
-        .then(users => {
-            console.log('Log in success');
-            res.json({"status": "Success"});
-        })
-        .catch(error => {
-            console.log('Log in failed');
-            res.status(401).json({"status": "Failed"});
-        });
+    // User.find( {domain: req.body.domain} )
+    //     .then(users => {
+    //         console.log('Log in success');
+    //         res.json({"status": "Success"});
+    //     })
+    //     .catch(error => {
+    //         console.log('Log in failed');
+    //         res.status(401).json({"status": "Failed"});
+    //     });
 
-    // const domain = req.body.inputDomain;
-    // const password = req.body.inputPassword;
+    const domain = req.body.inputDomain;
+    const password = req.body.inputPassword;
 
-    // if (domain === 'Giorno' && password === 'abc123') {
-    //     res.json({"status": "Success"});
-    // }
-    // else {
-    //     res.status(401).json({"status": "Failed"});
-    // }
+    if (domain === 'Giorno' && password === 'abc123') {
+        res.json({"status": "Success"});
+    }
+    else {
+        res.status(401).json({"status": "Failed"});
+    }
 });
 
 router.get('/', function(req, res) {
