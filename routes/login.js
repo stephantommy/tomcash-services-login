@@ -1,7 +1,9 @@
-const express = require("express");
+const express = require('express');
+const path = require('path');
+
 const router = express.Router();
 
-const User = require('../models/User');
+const User = require(path.join(__dirname, '../models/User'));
 
 router.post('/', function(req, res) {
     console.log('Logging in...');
