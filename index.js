@@ -18,4 +18,4 @@ app.use(express.urlencoded({extended:false}));
 
 app.use('/api/login', require(path.join(__dirname, '/routes/login')));
 
-app.listen(port, () => console.log(`tomcash login service is running on port ${port}`));
+app.listen(port, host, () => console.log(`tomcash login service is running on port ${port}`));
